@@ -1,6 +1,5 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import React from 'react';
 import { About } from '../pages';
 
 describe('Componente About contém as informações sobre a Pokédex', () => {
