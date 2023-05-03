@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/react';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
+import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from './renderWithRouter';
-import userEvent from '@testing-library/user-event';
 
 const pokemon = {
   id: 25,
@@ -50,7 +50,6 @@ describe('Componente PokemonDetails', () => {
 
   test('é possível favoritar um Pokémon', () => {
     const checkbox = screen.getByRole('checkbox', { name: /pokémon favoritado?/i });
-    expect(checkbox).toBeInTheDocument();
     userEvent.click(checkbox);
     const altImage = `${name} is marked as favorite`;
     expect(screen.getByAltText(altImage)).toBeInTheDocument();
